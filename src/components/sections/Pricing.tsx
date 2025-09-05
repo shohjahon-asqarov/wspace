@@ -36,7 +36,7 @@ const Pricing = () => {
           <h2 className="font-bold text-4xl md:text-[54px] lg:text-[64px]">
             Choose Your Plan
           </h2>
-
+          
           <p className="defoult_p mt-6 mb-15">
             Whether you want to get organized, keep your personal life on track,
             or boost workplace productivity, Evernote has the  right plan
@@ -44,36 +44,35 @@ const Pricing = () => {
           </p>
         </div>
 
-        <div className="max-w-[1520px] mx-auto px-[1px] grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-[1520px] mx-auto px-[1px] grid md:grid-cols-2 lg:grid-cols-3 ">
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`group rounded-2xl py-[50.5px] pl-6 flex flex-col gap-[28px] border border-[#FFE492] 
-                ${index == 1 ? "bg-blue-500" : ""}`}
+              className="group rounded-2xl py-[50.5px] pl-11 flex flex-col max-w-[472px] gap-[28px] border-[1px] border-[#FFE492] "
             >
-              <h3 className="font-bold text-[36px] leading-[36px]">
+              <h3 className="font-semibold text-[24px] leading-[36px]">
                 {plan.title}
               </h3>
-
+              
               <p className="font-bold text-[36px] leading-[100%] tracking-[-0.02em]">
                 {plan.price}
               </p>
-
-              <p className="font-normal text-[16px] leading-[20px] tracking-[-0.02em] text-gray-600">
+              
+              <p className="font-medium text-[18px] leading-[23px] tracking-[-0.02em] ">
                 {plan.desc}
               </p>
-
+              
               <ul className="flex flex-col gap-[28px] font-normal text-[16px] leading-[20px] tracking-[-0.02em] text-gray-600">
                 {features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex gap-1 items-center">
-                    <CheckIcon />
+                  <li key={featureIndex} className="flex gap-4 items-center max-w-[384px]">
+                    <CheckIcon /> 
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
-
-              <button className="self-start text-left px-10 py-5 rounded-lg font-medium text-lg text-[#4F9CF9] bg-white border border-[#4F9CF9]" >
-                Get Started
+              
+              <button className="self-start text-left px-10 py-5 rounded-lg font-medium text-lg bg-white border border-[#FFE492]" >
+                Get Started 
                 <ArrovRight />
               </button>
             </div>
