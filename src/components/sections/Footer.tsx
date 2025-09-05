@@ -6,6 +6,9 @@ import FacebookIcon from '../../../public/icons/Icon_11_.svg'
 import TwitterIcon from '../../../public/icons/Group.svg'
 import LinkedInIcon from '../../../public/icons/Linkedin.svg'
 import ArrovRight from '../ui/ArrovRight'
+import Apple from '../../../public/icons/apple.svg'
+import Windovs from '../../../public/icons/windows.svg'
+import Android from '../../../public/icons/android.svg'
 
 const Footer = () => {
   const footerLinks = {
@@ -25,21 +28,23 @@ const Footer = () => {
   return (
     <footer className="color pt-[140px] pb-8">
       <div className="container  px-4">
-        <div className=' lg:mx-auto max-w-[595px]'>
+        <div className=' lg:mx-auto max-w-[595px] pb-[140px]'>
           <h2 className="font-bold lg:text-center text-left text-white text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[64px] lg:leading-[100%] tracking-[-0.02em]">Try Whitepace today</h2>
-          <p className='defoult_p lg:text-center  text-left text-white '>
+          <p className='defoult_p lg:text-center text-left text-white mt-6 mb-10 '>
             Get started for free.
             Add your whole team as your needs grow.
           </p>
-          <button className='defoult_btn flex justify-center'>
+          <button className='defoult_btn mx-auto inline-block'>
             Try Taskey free
-            <ArrovRight/>
+            <ArrovRight />
           </button>
-          <p className='defoult_p lg:text-center  text-left text-white '>
+          <p className='defoult_p lg:text-center my-10 text-left text-white '>
             On a big team? Contact sales
           </p>
-          <div>
-
+          <div className='grid grid-cols-3 max-w-[260px] lg:mx-auto'>
+            <Image src={Apple} width={60} height={60} alt='Apple logo' />
+            <Image src={Windovs} width={60} height={60} alt='Windows logo' />
+            <Image src={Android} width={60} height={60} alt='Android logo' />
           </div>
         </div>
         <div>
