@@ -16,35 +16,58 @@ import ArrovRight from '../ui/ArrovRight';
 import Apple from '../../../public/icons/apple.svg';
 import Windovs from '../../../public/icons/windows.svg';
 import Android from '../../../public/icons/android.svg';
+import { FadeInUp, StaggerContainer, StaggerItem, HoverScale, HoverLift } from '@/components/ui/Animations';
 
 const FooterCTA: React.FC = () => {
   const { t } = useTranslation();
 
   return (
     <div className='lg:mx-auto lg:max-w-[595px] pb-[140px] flex flex-col items-center'>
-      <H2 className="font-bold lg:text-center text-left text-white text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[64px] lg:leading-[100%] tracking-[-0.02em]">
-        {t('footer.tryToday')}
-      </H2>
+      <FadeInUp delay={0.2}>
+        <H2 className="font-bold lg:text-center text-left text-white text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[64px] lg:leading-[100%] tracking-[-0.02em]">
+          {t('footer.tryToday')}
+        </H2>
+      </FadeInUp>
       
-      <P className='defoult_p text-center text-white mt-6 mb-10'>
-        {t('footer.getStarted')}
-        {t('footer.addTeam')}
-      </P>
+      <FadeInUp delay={0.4}>
+        <P className='defoult_p text-center text-white mt-6 mb-10'>
+          {t('footer.getStarted')}
+          {t('footer.addTeam')}
+        </P>
+      </FadeInUp>
       
-      <Button variant="primary" className='inline-block'>
-        {t('footer.tryTaskey')}
-        <ArrovRight />
-      </Button>
+      <FadeInUp delay={0.6}>
+        <HoverScale scale={1.05}>
+          <Button variant="primary" className='inline-block'>
+            {t('footer.tryTaskey')}
+            <ArrovRight />
+          </Button>
+        </HoverScale>
+      </FadeInUp>
       
-      <P className='defoult_p lg:text-center my-10 text-left text-white'>
-        {t('footer.bigTeam')}
-      </P>
+      <FadeInUp delay={0.8}>
+        <P className='defoult_p lg:text-center my-10 text-left text-white'>
+          {t('footer.bigTeam')}
+        </P>
+      </FadeInUp>
       
-      <div className='grid grid-cols-3 max-w-[260px] lg:mx-auto gap-7'>
-        <Image src={Apple} width={60} height={60} alt='Apple logo' />
-        <Image src={Windovs} width={60} height={60} alt='Windows logo' />
-        <Image src={Android} width={60} height={60} alt='Android logo' />
-      </div>
+      <StaggerContainer className='grid grid-cols-3 max-w-[260px] lg:mx-auto gap-7'>
+        <StaggerItem>
+          <HoverScale scale={1.1}>
+            <Image src={Apple} width={60} height={60} alt='Apple logo' />
+          </HoverScale>
+        </StaggerItem>
+        <StaggerItem>
+          <HoverScale scale={1.1}>
+            <Image src={Windovs} width={60} height={60} alt='Windows logo' />
+          </HoverScale>
+        </StaggerItem>
+        <StaggerItem>
+          <HoverScale scale={1.1}>
+            <Image src={Android} width={60} height={60} alt='Android logo' />
+          </HoverScale>
+        </StaggerItem>
+      </StaggerContainer>
     </div>
   );
 };
@@ -54,19 +77,22 @@ const FooterLinkGroup: React.FC<{
   links: string[];
 }> = ({ title, links }) => (
   <div className="text-center sm:text-left">
-    <H3 className="font-medium text-xl lg:text-2xl mb-4 text-white">
-      {title}
-    </H3>
-    <div className="space-y-3">
+    <FadeInUp delay={0.2}>
+      <H3 className="font-medium text-xl lg:text-2xl mb-4 text-white">
+        {title}
+      </H3>
+    </FadeInUp>
+    <StaggerContainer className="space-y-3">
       {links.map((link: string, index: number) => (
-        <P 
-          key={index} 
-          className="text-sm hover:text-gray-300 cursor-pointer transition-colors"
-        >
-          {link}
-        </P>
+        <StaggerItem key={index}>
+          <P 
+            className="text-sm hover:text-gray-300 cursor-pointer transition-colors duration-200 hover:translate-x-1"
+          >
+            {link}
+          </P>
+        </StaggerItem>
       ))}
-    </div>
+    </StaggerContainer>
   </div>
 );
 
@@ -75,15 +101,19 @@ const FooterLogoSection: React.FC = () => {
 
   return (
     <div className="sm:col-span-2 lg:col-span-1 flex flex-col items-center text-center sm:inline-block sm:text-left">
-      <Image
-        width={191}
-        height={34}
-        src={Logo}
-        alt="whitepace"
-      />
-      <P className="text-white mt-4 text-sm leading-relaxed">
-        {t('footer.description')}
-      </P>
+      <FadeInUp delay={0.2}>
+        <Image
+          width={191}
+          height={34}
+          src={Logo}
+          alt="whitepace"
+        />
+      </FadeInUp>
+      <FadeInUp delay={0.4}>
+        <P className="text-white mt-4 text-sm leading-relaxed">
+          {t('footer.description')}
+        </P>
+      </FadeInUp>
     </div>
   );
 };
@@ -92,23 +122,31 @@ const FooterTryTodaySection: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="sm:col-span-2 lg:col-span-1 text-center sm:text-left">
-      <H3 className="font-bold text-2xl lg:text-3xl mb-4 text-white">
-        {t('footer.tryItToday')}
-      </H3>
-      <P className="text-sm leading-relaxed mb-6 text-white">
-        {t('footer.getStarted')} {t('footer.addTeam')}
-      </P>
-      <Button variant="primary" className="flex mx-auto sm:mx-0 w-fit">
-        {t('footer.startToday')}
-        <Image
-          className="ml-2.5"
-          width={14}
-          height={14}
-          src={ArrowIcon}
-          alt="arrow icon"
-        />
-      </Button>
+    <div className="sm:col-span-2 lg:col-span-1 text-center sm:text-left flex flex-col items-center">
+      <FadeInUp delay={0.2}>
+        <H3 className="font-bold text-2xl lg:text-3xl mb-4 text-white">
+          {t('footer.tryItToday')}
+        </H3>
+      </FadeInUp>
+      <FadeInUp delay={0.4}>
+        <P className="text-sm leading-relaxed mb-6 text-white">
+          {t('footer.getStarted')} {t('footer.addTeam')}
+        </P>
+      </FadeInUp>
+      <FadeInUp delay={0.6}>
+        <HoverScale scale={1.05}>
+          <Button variant="primary" className="flex items-center">
+            {t('footer.startToday')}
+            <Image
+              className="ml-2 inline-block"
+              width={14}
+              height={14}
+              src={ArrowIcon}
+              alt="arrow icon"
+            />
+          </Button>
+        </HoverScale>
+      </FadeInUp>
     </div>
   );
 };

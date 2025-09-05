@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 import CustomizeImg from '../../../public/img/customize.img.jpg'
 import ArrovRight from '../ui/ArrovRight'
+import { FadeInUp, FadeInLeft, FadeInRight, HoverScale } from '@/components/ui/Animations'
 
 const Customization = () => {
   const { t } = useTranslation()
@@ -10,27 +11,37 @@ const Customization = () => {
     <section className="lg:py-[140px] md:py-[100px] py-20">
       <div className="container text-center lg:text-left grid lg:grid-cols-2 items-center gap-8">
         <div className="pt-12 order-2 lg:order-1">
-          <h2 className="font-bold text-4xl md:text-[54px] lg:text-[64px]">
-            {t('customization.title')}
-          </h2>
+          <FadeInUp delay={0.2}>
+            <h2 className="font-bold text-4xl md:text-[54px] lg:text-[64px]">
+              {t('customization.title')}
+            </h2>
+          </FadeInUp>
 
-          <p className="defoult_p mt-6 mb-15">
-            {t('customization.subtitle')}
-          </p>
+          <FadeInUp delay={0.4}>
+            <p className="defoult_p mt-6 mb-15">
+              {t('customization.subtitle')}
+            </p>
+          </FadeInUp>
 
-          <button className="defoult_btn">
-            {t('customization.letsGo')}
-            <ArrovRight />
-          </button>
+          <FadeInUp delay={0.6}>
+            <HoverScale scale={1.05}>
+              <button className="defoult_btn">
+                {t('customization.letsGo')}
+                <ArrovRight />
+              </button>
+            </HoverScale>
+          </FadeInUp>
         </div>
 
-        <Image
-          className="w-full order-1 lg:order-2"
-          width={686}
-          height={479}
-          src={CustomizeImg}
-          alt="customize img"
-        />
+        <FadeInRight delay={0.8}>
+          <Image
+            className="w-full order-1 lg:order-2"
+            width={686}
+            height={479}
+            src={CustomizeImg}
+            alt="customize img"
+          />
+        </FadeInRight>
       </div>
     </section>
   )

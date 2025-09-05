@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { ButtonVariant, ButtonSize, BaseComponentProps } from '@/types';
 
 interface ButtonProps extends BaseComponentProps {
@@ -21,7 +22,7 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const getButtonStyles = () => {
-    const baseStyles = 'font-medium transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100';
+    const baseStyles = 'font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed';
     
     switch (variant) {
       case 'primary':
@@ -47,15 +48,35 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   return (
-    <button
+    <motion.button
       type={type}
       className={`${getButtonStyles()} ${getSizeStyles()} ${className}`}
       onClick={onClick}
       disabled={disabled}
+      whileHover={{ 
+        scale: disabled ? 1 : 1.05,
+        y: disabled ? 0 : -2
+      }}
+      whileTap={{ 
+        scale: disabled ? 1 : 0.95,
+        y: disabled ? 0 : 0
+      }}
+      transition={{ 
+        duration: 0.2,
+        ease: "easeOut"
+      }}
       {...props}
     >
-      {children}
-    </button>
+      <motion.span
+        className="relative inline-block"
+        whileHover={{ 
+          x: variant === 'primary' ? 2 : 0,
+          transition: { duration: 0.2 }
+        }}
+      >
+        {children}
+      </motion.span>
+    </motion.button>
   );
 };
 

@@ -6,6 +6,18 @@ export { H1, H2, H3, H4, H5, H6, P, Span, Div } from './ui/TextElements';
 export { default as ArrovRight } from './ui/ArrovRight';
 export { default as CheckIcon } from './ui/CheckIcon';
 export { default as LanguageSwitcher } from './ui/LanguageSwitcher';
+export {
+  FadeInUp,
+  FadeInLeft,
+  FadeInRight,
+  ScaleIn,
+  StaggerContainer,
+  StaggerItem,
+  HoverScale,
+  HoverLift,
+  Pulse,
+  SlideInFromBottom
+} from './ui/Animations';
 
 export { default as AnyWhere } from './sections/AnyWhere';
 export { default as AppItegration } from './sections/AppItegration';

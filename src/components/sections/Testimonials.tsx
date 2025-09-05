@@ -7,6 +7,7 @@ import LongHairAvatar from '../../../public/img/turkish.svg'
 import StarIcon from '../../../public/icons/Btn-Star.svg'
 import ArrowLeft from '../../../public/icons/Arrow2.svg'
 import ArrowRight from '../../../public/icons/Arrow.svg'
+import { FadeInUp, StaggerContainer, StaggerItem } from '@/components/ui/Animations'
 
 // Import Swiper styles
 import 'swiper/css'
