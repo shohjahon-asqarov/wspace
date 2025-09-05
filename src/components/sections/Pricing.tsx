@@ -33,13 +33,13 @@ const Pricing = () => {
     <section className="lg:py-[140px] md:py-[100px] py-20">
       <div className="container">
         <div className="text-center">
-          <h2 className="font-bold text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[72px] lg:leading-[100%] tracking-[-0.02em]">
+          <h2 className="font-bold text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[64px] lg:leading-[100%] tracking-[-0.02em]">
             Choose Your Plan
           </h2>
           
           <p className="defoult_p mt-6 mb-15">
             Whether you want to get organized, keep your personal life on track,
-            or boost workplace productivity, Evernote has the <br /> right plan
+            or boost workplace productivity, Evernote has the  right plan
             for you.
           </p>
         </div>
@@ -48,7 +48,7 @@ const Pricing = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className="group rounded-2xl py-[50.5px] pl-6 flex flex-col gap-[28px] border border-[#FFE492] transition-all duration-300 transform hover:shadow-xl hover:scale-105 hover:border-blue-500"
+              className="group rounded-2xl py-[50.5px] pl-6 flex flex-col gap-[28px] border border-[#FFE492] "
             >
               <h3 className="font-bold text-[36px] leading-[36px]">
                 {plan.title}
@@ -71,7 +71,7 @@ const Pricing = () => {
                 ))}
               </ul>
               
-              <button className="self-start text-left px-10 py-5 rounded-lg font-medium text-lg text-[#4F9CF9] bg-white border border-[#4F9CF9] transition-all duration-300 group-hover:bg-[#4F9CF9] group-hover:text-white group-hover:scale-105">
+              <button className="self-start text-left px-10 py-5 rounded-lg font-medium text-lg text-[#4F9CF9] bg-white border border-[#4F9CF9]" >
                 Get Started 
                 <ArrovRight />
               </button>

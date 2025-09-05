@@ -9,6 +9,7 @@ import Pricing from "@/components/sections/Pricing";
 import ProjectManagement from "@/components/sections/ProjectManagement";
 import Sponsors from "@/components/sections/Sponsors";
 import Testimonials from "@/components/sections/Testimonials";
+import Extension from "@/components/sections/Extension"
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <main>
         <Hero />
         <ProjectManagement />
+        <Extension/>
         <Customization />
         <Pricing />
         <AnyWhere />

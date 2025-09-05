@@ -8,7 +8,7 @@ const ProjectManagement = () => {
     <section className="lg:py-[140px] md:py-[100px] pt-10 !pb-0">
       <div className="container grid lg:grid-cols-2 gap-8 text-center lg:text-left">
         <div className="py-17">
-          <h2 className="font-bold text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[72px] lg:leading-[100%] tracking-[-0.02em]">
+          <h2 className="font-bold text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[64px] lg:leading-[100%] tracking-[-0.02em]">
             Project <br /> Management
           </h2>
 
