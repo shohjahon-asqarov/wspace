@@ -8,36 +8,56 @@ import Button from '@/components/ui/Button';
 import { PricingPlan } from '@/types';
 import ArrovRight from "../ui/ArrovRight";
 import CheckIcon from "../ui/CheckIcon";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const PricingCard: React.FC<{ plan: PricingPlan; index: number }> = ({ plan, index }) => {
   const { t } = useTranslation();
+  const isPopular = index === 1;
 
   return (
-    <div className="group rounded-2xl py-[50.5px] pl-11 flex flex-col gap-[28px] border-[1px] border-[#FFE492] text-[#212529]">
-      <H3 className="font-semibold text-[24px]">
+    <div className={`group rounded-2xl py-[50.5px] pl-11 flex flex-col gap-[28px] border-[1px] ${
+      isPopular 
+        ? 'bg-[#043873] border-[#043873] text-white md:scale-y-110' 
+        : 'border-[#FFE492] text-[#212529]'
+    }`}>
+      <H3 className={`font-semibold text-[24px] ${isPopular ? 'text-white' : 'text-[#212529]'}`}>
         {plan.title}
       </H3>
 
-      <P className="font-bold !text-[36px] leading-[100%] tracking-[-0.02em]">
+      <P className={`font-bold !text-[36px] leading-[100%] tracking-[-0.02em] ${
+        isPopular ? 'text-[#FFE492]' : 'text-[#212529]'
+      }`}>
         {plan.price}
       </P>
 
-      <P className="font-medium text-[18px] leading-[23px] tracking-[-0.02em]">
+      <P className={`font-medium text-[18px] leading-[23px] tracking-[-0.02em] ${
+        isPopular ? 'text-white' : 'text-[#212529]'
+      }`}>
         {plan.description}
       </P>
 
-      <ul className="flex flex-col gap-[28px] font-medium text-[18px] leading-[23px] tracking-[-0.02em]">
+      <ul className={`flex flex-col gap-[28px] font-medium text-[18px] leading-[23px] tracking-[-0.02em] ${
+        isPopular ? 'text-white' : 'text-[#212529]'
+      }`}>
         {plan.features.map((feature: string, featureIndex: number) => (
           <li key={featureIndex} className="flex gap-4 items-center max-w-[384px]">
-            <CheckIcon />
+            <CheckIcon isWhite={isPopular} />
             <span className="!text-base">{feature}</span>
           </li>
         ))}
       </ul>
 
       <Button 
-        variant="white"
-        className="self-start text-left px-10 py-5 text-[16px] font-medium rounded-lg text-lg bg-white border border-[#FFE492]"
+        variant={isPopular ? "primary" : "white"}
+        className={`self-start text-left px-10 py-5 text-[16px] font-medium rounded-lg text-lg ${
+          isPopular 
+            ? 'bg-[#4f9cf9] text-white border-[#4f9cf9]' 
+            : 'bg-white border border-[#FFE492] text-[#212529]'
+        }`}
       >
         {t('pricing.getStarted')}
         <ArrovRight />
@@ -63,11 +83,30 @@ const PricingHeader: React.FC = () => {
 };
 
 const PricingGrid: React.FC<{ plans: PricingPlan[] }> = ({ plans }) => (
-  <div className="max-w-[1520px] mx-auto px-[1px] grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {plans.map((plan, index) => (
-      <PricingCard key={index} plan={plan} index={index} />
-    ))}
-  </div>
+  <>
+    <div className="hidden md:grid max-w-[1520px] mx-auto px-[1px] grid-cols-2 lg:grid-cols-3 gap-8 mt-32">
+      {plans.map((plan, index) => (
+        <PricingCard key={index} plan={plan} index={index} />
+      ))}
+    </div>
+    
+    <div className="md:hidden mt-32">
+      <Swiper
+        modules={[Navigation, Pagination]}
+        spaceBetween={20}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        className="pricing-swiper"
+      >
+        {plans.map((plan, index) => (
+          <SwiperSlide key={index}>
+            <PricingCard plan={plan} index={index} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  </>
 );
 
 const Pricing: React.FC = () => {

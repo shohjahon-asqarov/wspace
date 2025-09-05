@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const ArrovRight = () => {
   return (
-   <Image src={Arrov_right} width={16} height={16} alt='arrow right icon' priority className='inline-block'/>
+   <Image src={Arrov_right} width={16} height={16} alt='arrow right icon' priority className='inline-block mx-2'/>
   )
 }
 

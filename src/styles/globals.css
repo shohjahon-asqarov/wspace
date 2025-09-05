@@ -171,3 +171,30 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Swiper styles for pricing */
+.pricing-swiper {
+  padding: 20px 0 60px 0;
+}
+
+.pricing-swiper .swiper-button-next,
+.pricing-swiper .swiper-button-prev {
+  color: var(--color-primary);
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+}
+
+.pricing-swiper .swiper-button-next:after,
+.pricing-swiper .swiper-button-prev:after {
+  font-size: 20px;
+}
+
+.pricing-swiper .swiper-pagination-bullet {
+  background: var(--color-primary);
+  opacity: 0.3;
+}
+
+.pricing-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
