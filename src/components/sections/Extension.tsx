@@ -7,7 +7,7 @@ const Extension = () => {
   return (
     <section className="lg:py-[140px] md:py-[100px] py-20 color mt-32">
       <div className="container text-center lg:text-left grid lg:grid-cols-2">
-        <div className='my-auto max-w-[528px]'>
+        <div className='my-auto md:max-w-[528px]'>
           <h2 className="font-bold text-white text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[64px] lg:leading-[100%] tracking-[-0.02em]">Use as Extension</h2>
           <p className='defoult_p text-white  mt-6 mb-15'>
             Use the web clipper extension, available on Chrome and Firefox, to save

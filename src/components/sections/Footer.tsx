@@ -28,20 +28,20 @@ const Footer = () => {
   return (
     <footer className="color pt-[140px] pb-8">
       <div className="container  px-4">
-        <div className=' lg:mx-auto max-w-[595px] pb-[140px]'>
+        <div className=' lg:mx-auto max-w-[595px] pb-[140px] flex flex-col items-center'>
           <h2 className="font-bold lg:text-center text-left text-white text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[64px] lg:leading-[100%] tracking-[-0.02em]">Try Whitepace today</h2>
           <p className='defoult_p lg:text-center text-left text-white mt-6 mb-10 '>
             Get started for free.
             Add your whole team as your needs grow.
           </p>
-          <button className='defoult_btn mx-auto inline-block'>
+          <button className='defoult_btn inline-block'>
             Try Taskey free
             <ArrovRight />
           </button>
           <p className='defoult_p lg:text-center my-10 text-left text-white '>
             On a big team? Contact sales
           </p>
-          <div className='grid grid-cols-3 max-w-[260px] lg:mx-auto'>
+          <div className='grid grid-cols-3 max-w-[260px] lg:mx-auto gap-7'>
             <Image src={Apple} width={60} height={60} alt='Apple logo' />
             <Image src={Windovs} width={60} height={60} alt='Windows logo' />
             <Image src={Android} width={60} height={60} alt='Android logo' />
