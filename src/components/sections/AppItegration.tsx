@@ -2,9 +2,11 @@ import Image from "next/image"
 import AppsImage from '../../../public/img/Apps.svg'
 import ArrowIcon from '../../../public/icons/Icon.svg'
 
+import AppBg from '../../../public/App-Bg.png'
+
 const AppIntegration = () => {
   return (
-    <section className="color lg:py-[140px] md:py-[100px] py-20">
+    <section style={{ backgroundImage: `url(${AppBg.src})`}} className="color lg:py-[140px] md:py-[100px] py-20">
       <div className="container grid lg:grid-cols-2 text-center lg:text-left gap-8 lg:gap-8 items-center">
         <Image
           className="w-full scale-90"
