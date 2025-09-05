@@ -76,6 +76,11 @@ footer {
 }
 
 /* Button styles using CSS custom properties */
+
+button {
+  cursor: pointer;
+}
+
 .defoult_btn {
   padding: 20px 40px;
   background-color: var(--color-primary);
