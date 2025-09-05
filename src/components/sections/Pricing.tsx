@@ -1,78 +1,86 @@
-import { useTranslation } from 'react-i18next'
-import ArrovRight from "../ui/ArrovRight"
-import CheckIcon from "../ui/CheckIcon"
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { usePricing } from '@/hooks/useNavigation';
+import Section from '@/components/ui/Section';
+import Container from '@/components/ui/Container';
+import { H2, H3, P } from '@/components/ui/TextElements';
+import Button from '@/components/ui/Button';
+import { PricingPlan } from '@/types';
+import ArrovRight from "../ui/ArrovRight";
+import CheckIcon from "../ui/CheckIcon";
 
-const Pricing = () => {
-  const { t } = useTranslation()
-
-  const plans = [
-    {
-      title: t('pricing.plans.free'),
-      price: "$0",
-      desc: t('pricing.plans.freeDesc'),
-    },
-    {
-      title: t('pricing.plans.personal'),
-      price: "$11.99",
-      desc: t('pricing.plans.personalDesc'),
-    },
-    {
-      title: t('pricing.plans.organization'),
-      price: "$49.99",
-      desc: t('pricing.plans.orgDesc'),
-    },
-  ]
+const PricingCard: React.FC<{ plan: PricingPlan; index: number }> = ({ plan, index }) => {
+  const { t } = useTranslation();
 
   return (
-    <section className="lg:py-[140px] md:py-[100px] py-20">
-      <div className="container">
-        <div className="text-center">
-          <h2 className="font-bold text-4xl md:text-[54px] lg:text-[64px]">
-            {t('pricing.title')}
-          </h2>
+    <div className="group rounded-2xl py-[50.5px] pl-11 flex flex-col gap-[28px] border-[1px] border-[#FFE492] text-[#212529]">
+      <H3 className="font-semibold text-[24px]">
+        {plan.title}
+      </H3>
 
-          <p className="defoult_p mt-6 mb-15">
-            {t('pricing.subtitle')}
-          </p>
-        </div>
+      <P className="font-bold !text-[36px] leading-[100%] tracking-[-0.02em]">
+        {plan.price}
+      </P>
 
-        <div className="max-w-[1520px] mx-auto px-[1px] grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {plans.map((plan, index) => (
-            <div
-              key={index}
-              className="group rounded-2xl py-[50.5px] pl-11 flex flex-col gap-[28px] border-[1px] border-[#FFE492] text-[#212529]"
-            >
-              <h3 className="font-semibold text-[24px]">
-                {plan.title}
-              </h3>
+      <P className="font-medium text-[18px] leading-[23px] tracking-[-0.02em]">
+        {plan.description}
+      </P>
 
-              <p className="font-bold !text-[36px] leading-[100%] tracking-[-0.02em]">
-                {plan.price}
-              </p>
+      <ul className="flex flex-col gap-[28px] font-medium text-[18px] leading-[23px] tracking-[-0.02em]">
+        {plan.features.map((feature: string, featureIndex: number) => (
+          <li key={featureIndex} className="flex gap-4 items-center max-w-[384px]">
+            <CheckIcon />
+            <span className="!text-base">{feature}</span>
+          </li>
+        ))}
+      </ul>
 
-              <p className="font-medium text-[18px] leading-[23px] tracking-[-0.02em] ">
-                {plan.desc}
-              </p>
+      <Button 
+        variant="white"
+        className="self-start text-left px-10 py-5 text-[16px] font-medium rounded-lg text-lg bg-white border border-[#FFE492]"
+      >
+        {t('pricing.getStarted')}
+        <ArrovRight />
+      </Button>
+    </div>
+  );
+};
 
-              <ul className="flex flex-col gap-[28px] font-medium text-[18px] leading-[23px] tracking-[-0.02em]">
-                {(t('pricing.features', { returnObjects: true }) as string[]).map((feature: string, featureIndex: number) => (
-                  <li key={featureIndex} className="flex gap-4 items-center max-w-[384px]">
-                    <CheckIcon />
-                    <span className="!text-base">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+const PricingHeader: React.FC = () => {
+  const { t } = useTranslation();
 
-              <button className="self-start text-left px-10 py-5 text-[16px] font-medium rounded-lg text-lg bg-white border border-[#FFE492]" >
-                {t('pricing.getStarted')}
-                <ArrovRight />
-              </button>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
+  return (
+    <div className="text-center">
+      <H2 className="font-bold text-4xl md:text-[54px] lg:text-[64px]">
+        {t('pricing.title')}
+      </H2>
 
-export default Pricing
+      <P className="defoult_p mt-6 mb-15">
+        {t('pricing.subtitle')}
+      </P>
+    </div>
+  );
+};
+
+const PricingGrid: React.FC<{ plans: PricingPlan[] }> = ({ plans }) => (
+  <div className="max-w-[1520px] mx-auto px-[1px] grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {plans.map((plan, index) => (
+      <PricingCard key={index} plan={plan} index={index} />
+    ))}
+  </div>
+);
+
+const Pricing: React.FC = () => {
+  const { plans } = usePricing();
+
+  return (
+    <Section className="lg:py-[140px] md:py-[100px] py-20">
+      <Container>
+        <PricingHeader />
+        <PricingGrid plans={plans} />
+      </Container>
+    </Section>
+  );
+};
+
+export default Pricing;
