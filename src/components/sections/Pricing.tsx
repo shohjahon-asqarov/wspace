@@ -36,7 +36,7 @@ const Pricing = () => {
           <h2 className="font-bold text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[64px] lg:leading-[100%] tracking-[-0.02em]">
             Choose Your Plan
           </h2>
-
+          
           <p className="defoult_p mt-6 mb-15">
             Whether you want to get organized, keep your personal life on track,
             or boost workplace productivity, Evernote has the  right plan
@@ -48,32 +48,31 @@ const Pricing = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`group rounded-2xl py-[50.5px] pl-6 flex flex-col gap-[28px] border border-[#FFE492] 
-                ${index == 1 ? "bg-blue-500" : ""}`}
+              className="group rounded-2xl py-[50.5px] pl-6 flex flex-col gap-[28px] border border-[#FFE492] "
             >
               <h3 className="font-bold text-[36px] leading-[36px]">
                 {plan.title}
               </h3>
-
+              
               <p className="font-bold text-[36px] leading-[100%] tracking-[-0.02em]">
                 {plan.price}
               </p>
-
+              
               <p className="font-normal text-[16px] leading-[20px] tracking-[-0.02em] text-gray-600">
                 {plan.desc}
               </p>
-
+              
               <ul className="flex flex-col gap-[28px] font-normal text-[16px] leading-[20px] tracking-[-0.02em] text-gray-600">
                 {features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex gap-1 items-center">
-                    <CheckIcon />
+                    <CheckIcon /> 
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
-
+              
               <button className="self-start text-left px-10 py-5 rounded-lg font-medium text-lg text-[#4F9CF9] bg-white border border-[#4F9CF9]" >
-                Get Started
+                Get Started 
                 <ArrovRight />
               </button>
             </div>
