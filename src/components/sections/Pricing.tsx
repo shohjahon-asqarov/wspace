@@ -62,7 +62,7 @@ const Pricing = () => {
                 {plan.desc}
               </p>
               
-              <ul className="flex flex-col gap-[28px] font-normal text-[16px] leading-[20px] tracking-[-0.02em] text-gray-600">
+              <ul className="flex flex-col gap-[28px] font-medium text-[18px] leading-[23px] tracking-[-0.02em] text-gray-600">
                 {features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex gap-4 items-center max-w-[384px]">
                     <CheckIcon /> 
@@ -71,7 +71,7 @@ const Pricing = () => {
                 ))}
               </ul>
               
-              <button className="self-start text-left px-10 py-5 rounded-lg font-medium text-lg bg-white border border-[#FFE492]" >
+              <button className="self-start text-left px-10 py-5 text-[16px] font-medium rounded-lg font-medium text-lg bg-white border border-[#FFE492]" >
                 Get Started 
                 <ArrovRight />
               </button>
