@@ -7,7 +7,7 @@ const Customization = () => {
     <section className="lg:py-[140px] md:py-[100px] py-20">
       <div className="container text-center lg:text-left grid lg:grid-cols-2 gap-8">
         <div className="pt-12">
-          <h2 className="font-bold text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[64px] lg:leading-[100%] tracking-[-0.02em]">
+          <h2 className="font-bold text-4xl md:text-[54px] lg:text-[64px]">
             Customise it to your needs
           </h2>
 

@@ -33,7 +33,7 @@ const Pricing = () => {
     <section className="lg:py-[140px] md:py-[100px] py-20">
       <div className="container">
         <div className="text-center">
-          <h2 className="font-bold text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[64px] lg:leading-[100%] tracking-[-0.02em]">
+          <h2 className="font-bold text-4xl md:text-[54px] lg:text-[64px]">
             Choose Your Plan
           </h2>
 
