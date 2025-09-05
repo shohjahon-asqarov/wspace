@@ -89,7 +89,7 @@ const Testimonials = () => {
     <section className="lg:py-[140px] md:py-[100px] py-20">
       <div className="container mx-auto px-4">
         <div>
-          <h2 className="text-center font-bold text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[72px] lg:leading-[100%] tracking-[-0.02em]">
+          <h2 className="text-center font-bold text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[64px] lg:leading-[100%] tracking-[-0.02em]">
             See what our trusted users Say
           </h2>
         </div>

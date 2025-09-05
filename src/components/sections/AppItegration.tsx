@@ -17,7 +17,7 @@ const AppIntegration = () => {
         </div>
         
         <div>
-          <h2 className="text-white md:px-10 lg:px-0 font-bold text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[72px] lg:leading-[100%] tracking-[-0.02em]">
+          <h2 className="text-white md:px-10 lg:px-0 font-bold text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[64px] lg:leading-[100%] tracking-[-0.02em]">
             Work with Your Favorite Apps Using whitepace
           </h2>
           

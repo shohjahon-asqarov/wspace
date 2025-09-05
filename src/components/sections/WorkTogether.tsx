@@ -13,8 +13,8 @@ const WorkTogether = () => {
         alt="work img" 
       />
       
-      <div className="lg:py-[183px] order-[-1] lg:order-2">
-        <h2 className="font-bold text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[72px] lg:leading-[100%] tracking-[-0.02em]">
+      <div className="lg:py-[183px] order-[-1] lg:order-2 ">
+        <h2 className="font-bold text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[64px] lg:leading-[100%] tracking-[-0.02em]">
           Work together
         </h2>
         

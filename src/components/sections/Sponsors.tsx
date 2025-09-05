@@ -9,7 +9,7 @@ const Sponsors = () => {
     <section className="lg:py-[140px] md:py-[100px] !py-10">
       <div className="container">
         <div>
-          <h2 className="text-center font-bold text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[72px] lg:leading-[100%] tracking-[-0.02em]">
+          <h2 className="text-center font-bold text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[64px] lg:leading-[100%] tracking-[-0.02em]">
             Our sponsors
           </h2>
         </div>
