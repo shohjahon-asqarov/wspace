@@ -1,16 +1,19 @@
 import Image from 'next/image'
+import { useTranslation } from 'react-i18next'
 import AppleLogo from '../../../public/img/Apple.svg'
 import MicrosoftLogo from '../../../public/img/Microsoft.svg'
 import SlackLogo from '../../../public/img/Slack_Technologies_Logo 1.svg'
 import GoogleLogo from '../../../public/img/Google.svg'
 
 const Sponsors = () => {
+  const { t } = useTranslation()
+
   return (
     <section className="lg:py-[140px] md:py-[100px] !py-10 mb-10">
       <div className="container">
         <div>
           <h2 className="font-bold text-4xl md:text-[54px] lg:text-[64px] text-center">
-            Our sponsors
+            {t('sponsors.title')}
           </h2>
         </div>
 

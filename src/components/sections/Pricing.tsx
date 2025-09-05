@@ -1,32 +1,26 @@
+import { useTranslation } from 'react-i18next'
 import ArrovRight from "../ui/ArrovRight"
 import CheckIcon from "../ui/CheckIcon"
 
 const Pricing = () => {
+  const { t } = useTranslation()
+
   const plans = [
     {
-      title: "Free",
+      title: t('pricing.plans.free'),
       price: "$0",
-      desc: "Capture ideas and find them quickly",
+      desc: t('pricing.plans.freeDesc'),
     },
     {
-      title: "Personal",
+      title: t('pricing.plans.personal'),
       price: "$11.99",
-      desc: "Keep home and family on track",
+      desc: t('pricing.plans.personalDesc'),
     },
     {
-      title: "Organization",
+      title: t('pricing.plans.organization'),
       price: "$49.99",
-      desc: "Capture ideas and find them quickly",
+      desc: t('pricing.plans.orgDesc'),
     },
-  ]
-
-  const features = [
-    "Sync unlimited devices",
-    "10 GB monthly uploads",
-    "200 MB max. note size",
-    "Customize Home dashboard and access extra widgets",
-    "Connect primary Google Calendar account",
-    "Add due dates, reminders, and notifications to your tasks",
   ]
 
   return (
@@ -34,13 +28,11 @@ const Pricing = () => {
       <div className="container">
         <div className="text-center">
           <h2 className="font-bold text-4xl md:text-[54px] lg:text-[64px]">
-            Choose Your Plan
+            {t('pricing.title')}
           </h2>
 
           <p className="defoult_p mt-6 mb-15">
-            Whether you want to get organized, keep your personal life on track,
-            or boost workplace productivity, Evernote has the  right plan
-            for you.
+            {t('pricing.subtitle')}
           </p>
         </div>
 
@@ -63,7 +55,7 @@ const Pricing = () => {
               </p>
 
               <ul className="flex flex-col gap-[28px] font-medium text-[18px] leading-[23px] tracking-[-0.02em]">
-                {features.map((feature, featureIndex) => (
+                {(t('pricing.features', { returnObjects: true }) as string[]).map((feature: string, featureIndex: number) => (
                   <li key={featureIndex} className="flex gap-4 items-center max-w-[384px]">
                     <CheckIcon />
                     <span className="!text-base">{feature}</span>
@@ -71,8 +63,8 @@ const Pricing = () => {
                 ))}
               </ul>
 
-              <button className="self-start text-left px-10 py-5 text-[16px] font-medium rounded-lg font-medium text-lg bg-white border border-[#FFE492]" >
-                Get Started
+              <button className="self-start text-left px-10 py-5 text-[16px] font-medium rounded-lg text-lg bg-white border border-[#FFE492]" >
+                {t('pricing.getStarted')}
                 <ArrovRight />
               </button>
             </div>

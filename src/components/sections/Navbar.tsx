@@ -1,30 +1,33 @@
 import Image from "next/image"
 import { useState, useEffect } from "react"
+import { useTranslation } from 'react-i18next'
 import Logo from '../../../public/icons/logo.svg'
 import ArrovRight from "../ui/ArrovRight"
+import LanguageSwitcher from "../ui/LanguageSwitcher"
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { t } = useTranslation()
 
   const navLinks = [
     {
       id: 1,
-      title: 'Products',
+      title: t('navbar.products'),
       to: '#'
     },
     {
       id: 2,
-      title: 'Solution',
+      title: t('navbar.solution'),
       to: '#'
     },
     {
       id: 3,
-      title: 'Recourse',
+      title: t('navbar.resource'),
       to: '#'
     },
     {
       id: 4,
-      title: 'Pricing',
+      title: t('navbar.pricing'),
       to: '#pricing'
     }
   ]
@@ -82,12 +85,13 @@ const Navbar = () => {
             ))}
           </ul>
           
-          <div className="flex gap-4">
+          <div className="flex gap-4 items-center">
+            <LanguageSwitcher />
             <button className="yellow_btn hover:scale-105 transition-transform duration-200">
-              Login
+              {t('navbar.login')}
             </button>
             <button className="defoult_btn flex gap-4 items-center hover:scale-105 transition-transform duration-200">
-              Try Whitepace free 
+              {t('navbar.tryFree')}
               <ArrovRight />
             </button>
           </div>
@@ -102,17 +106,17 @@ const Navbar = () => {
           aria-label="Toggle menu"
         >
           <span 
-            className={`w-6 h-0.5 bg-gray-700 bg-white transition-all duration-300 ease-in-out transform origin-center ${
+            className={`w-6 h-0.5 bg-white transition-all duration-300 ease-in-out transform origin-center ${
               isMenuOpen ? 'rotate-45 translate-y-0' : 'translate-y-0'
             }`}
           />
           <span 
-            className={`w-6 h-0.5 bg-gray-700 bg-white mt-1.5 transition-all duration-300 ease-in-out ${
+            className={`w-6 h-0.5 bg-white mt-1.5 transition-all duration-300 ease-in-out ${
               isMenuOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
             }`}
           />
           <span 
-            className={`w-6 h-0.5 bg-gray-700 mt-1.5 bg-white transition-all duration-300 ease-in-out transform origin-center ${
+            className={`w-6 h-0.5 mt-1.5 bg-white transition-all duration-300 ease-in-out transform origin-center ${
               isMenuOpen ? '-rotate-45 translate-y-0' : 'translate-y-0'
             }`}
           />
@@ -170,11 +174,14 @@ const Navbar = () => {
 
             {/* Mobile Menu Buttons */}
             <div className="space-y-4 pt-4 border-t border-gray-200">
+              <div className="flex justify-center mb-4">
+                <LanguageSwitcher isMobile={true} />
+              </div>
               <button className="yellow_btn w-full hover:scale-105 transition-transform duration-200">
-                Login
+                {t('navbar.login')}
               </button>
               <button className="defoult_btn w-full flex items-center gap-4 hover:scale-105 transition-transform duration-200">
-                Try Whitepace free 
+                {t('navbar.tryFree')}
                 <ArrovRight />
               </button>
             </div>

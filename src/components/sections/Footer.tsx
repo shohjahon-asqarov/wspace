@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { useTranslation } from 'react-i18next'
 import Logo from '../../../public/img/Logo.svg'
 import ArrowIcon from '../../../public/icons/Icon.svg'
 import GlobalIcon from '../../../public/icons/Group.png'
@@ -11,13 +12,15 @@ import Windovs from '../../../public/icons/windows.svg'
 import Android from '../../../public/icons/android.svg'
 
 const Footer = () => {
+  const { t } = useTranslation()
+
   const footerLinks = {
-    product: ['Overview', 'Pricing', 'Customer stories'],
-    resources: ['Blog', 'Guides & tutorials', 'Help center'],
-    company: ['About us', 'Careers', 'Media kit']
+    product: t('footer.links.product', { returnObjects: true }),
+    resources: t('footer.links.resources', { returnObjects: true }),
+    company: t('footer.links.company', { returnObjects: true })
   }
 
-  const bottomLinks = ['Terms & privacy', 'Security', 'Status']
+  const bottomLinks = t('footer.bottomLinks', { returnObjects: true })
 
   const socialIcons = [
     { src: FacebookIcon, alt: 'Facebook', width: 13, height: 13 },
@@ -29,17 +32,17 @@ const Footer = () => {
     <footer className="color pt-[140px] pb-8">
       <div className="container">
         <div className='lg:mx-auto lg:max-w-[595px] pb-[140px] flex flex-col items-center'>
-          <h2 className="font-bold lg:text-center text-left text-white text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[64px] lg:leading-[100%] tracking-[-0.02em]">Try Whitepace today</h2>
+          <h2 className="font-bold lg:text-center text-left text-white text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[64px] lg:leading-[100%] tracking-[-0.02em]">{t('footer.tryToday')}</h2>
           <p className='defoult_p text-center text-white mt-6 mb-10 '>
-            Get started for free.
-            Add your whole team as your needs grow.
+            {t('footer.getStarted')}
+            {t('footer.addTeam')}
           </p>
           <button className='defoult_btn inline-block'>
-            Try Taskey free
+            {t('footer.tryTaskey')}
             <ArrovRight />
           </button>
           <p className='defoult_p lg:text-center my-10 text-left text-white '>
-            On a big team? Contact sales
+            {t('footer.bigTeam')}
           </p>
           <div className='grid grid-cols-3 max-w-[260px] lg:mx-auto gap-7'>
             <Image src={Apple} width={60} height={60} alt='Apple logo' />
@@ -59,16 +62,15 @@ const Footer = () => {
                 alt="whitepace"
               />
               <p className="text-white mt-4 text-sm leading-relaxed">
-                whitepace was created for the new ways we live and work.
-                We make a better workspace around the world
+                {t('footer.description')}
               </p>
             </div>
 
             {/* Product links */}
             <div className="text-center sm:text-left">
-              <h3 className="font-medium text-xl lg:text-2xl mb-4">Product</h3>
+              <h3 className="font-medium text-xl lg:text-2xl mb-4">{t('footer.product')}</h3>
               <div className="space-y-3">
-                {footerLinks.product.map((link, index) => (
+                {footerLinks.product.map((link: string, index: number) => (
                   <p key={index} className="text-sm hover:text-gray-300 cursor-pointer transition-colors">
                     {link}
                   </p>
@@ -78,9 +80,9 @@ const Footer = () => {
 
             {/* Resources links */}
             <div className="text-center sm:text-left">
-              <h3 className="font-medium text-xl lg:text-2xl mb-4">Resources</h3>
+              <h3 className="font-medium text-xl lg:text-2xl mb-4">{t('footer.resources')}</h3>
               <div className="space-y-3">
-                {footerLinks.resources.map((link, index) => (
+                {footerLinks.resources.map((link: string, index: number) => (
                   <p key={index} className="text-sm hover:text-gray-300 cursor-pointer transition-colors">
                     {link}
                   </p>
@@ -90,9 +92,9 @@ const Footer = () => {
 
             {/* Company links */}
             <div className="text-center sm:text-left">
-              <h3 className="font-medium text-xl lg:text-2xl mb-4">Company</h3>
+              <h3 className="font-medium text-xl lg:text-2xl mb-4">{t('footer.company')}</h3>
               <div className="space-y-3">
-                {footerLinks.company.map((link, index) => (
+                {footerLinks.company.map((link: string, index: number) => (
                   <p key={index} className="text-sm hover:text-gray-300 cursor-pointer transition-colors">
                     {link}
                   </p>
@@ -102,12 +104,12 @@ const Footer = () => {
 
             {/* Try It Today section */}
             <div className="sm:col-span-2 lg:col-span-1 text-center sm:text-left">
-              <h3 className="font-bold text-2xl lg:text-3xl mb-4">Try It Today</h3>
+              <h3 className="font-bold text-2xl lg:text-3xl mb-4">{t('footer.tryItToday')}</h3>
               <p className="text-sm leading-relaxed mb-6">
-                Get started for free. Add your whole team as your needs grow.
+                {t('footer.getStarted')} {t('footer.addTeam')}
               </p>
               <button className="flex defoult_btn mx-auto sm:mx-0 w-fit">
-                Start today
+                {t('footer.startToday')}
                 <Image
                   className="ml-2.5"
                   width={14}
@@ -134,12 +136,12 @@ const Footer = () => {
                   <span>English</span>
                 </div>
                 <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
-                  {bottomLinks.map((link, index) => (
+                  {bottomLinks.map((link: string, index: number) => (
                     <span key={index} className="hover:text-gray-300 cursor-pointer transition-colors">
                       {link}
                     </span>
                   ))}
-                  <span>©2021 Whitepace LLC.</span>
+                  <span>{t('footer.copyright')}</span>
                 </div>
               </div>
 

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { useTranslation } from 'react-i18next'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import OldManAvatar from '../../../public/img/Avater 02.svg'
@@ -13,58 +14,60 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
 const Testimonials = () => {
+  const { t } = useTranslation()
+
   const testimonials = [
     {
       id: 1,
       avatar: OldManAvatar,
-      text: "If you haven't tried whitepace yet, you need to give it a shot for your next event. It's so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.",
-      name: "Jessie Owner",
-      position: "Founder, XYZ Company",
+      text: t('testimonials.testimonial1'),
+      name: t('testimonials.name'),
+      position: t('testimonials.position'),
       bgColor: "bg-white",
       textColor: "text-gray-800"
     },
     {
       id: 2,
       avatar: LongHairAvatar,
-      text: "If you haven't tried whitepace yet, you need to give it a shot for your next event. It's so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.",
-      name: "Jessie Owner",
-      position: "Founder, XYZ Company",
+      text: t('testimonials.testimonial1'),
+      name: t('testimonials.name'),
+      position: t('testimonials.position'),
       bgColor: "bg_color",
       textColor: "text-white"
     },
     {
       id: 3,
       avatar: OldManAvatar,
-      text: "If you haven't tried whitepace yet, you need to give it a shot for your next event. It's so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.",
-      name: "Jessie Owner",
-      position: "Founder, XYZ Company",
+      text: t('testimonials.testimonial1'),
+      name: t('testimonials.name'),
+      position: t('testimonials.position'),
       bgColor: "bg_color",
       textColor: "text-white"
     },
     {
       id: 4,
       avatar: OldManAvatar,
-      text: "If you haven't tried whitepace yet, you need to give it a shot for your next event. It's so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.",
-      name: "Jessie Owner",
-      position: "Founder, XYZ Company",
+      text: t('testimonials.testimonial1'),
+      name: t('testimonials.name'),
+      position: t('testimonials.position'),
       bgColor: "bg-white",
       textColor: "text-gray-800"
     },
     {
       id: 5,
       avatar: LongHairAvatar,
-      text: "If you haven't tried whitepace yet, you need to give it a shot for your next event. It's so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.",
-      name: "Jessie Owner",
-      position: "Founder, XYZ Company",
+      text: t('testimonials.testimonial1'),
+      name: t('testimonials.name'),
+      position: t('testimonials.position'),
       bgColor: "bg_color",
       textColor: "text-white"
     },
     {
       id: 6,
       avatar: OldManAvatar,
-      text: "If you haven't tried whitepace yet, you need to give it a shot for your next event. It's so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.",
-      name: "Jessie Owner",
-      position: "Founder, XYZ Company",
+      text: t('testimonials.testimonial1'),
+      name: t('testimonials.name'),
+      position: t('testimonials.position'),
       bgColor: "bg_color",
       textColor: "text-white"
     }
@@ -90,7 +93,7 @@ const Testimonials = () => {
       <div className="container mx-auto px-4">
         <div>
           <h2 className="font-bold text-4xl md:text-[54px] lg:text-[64px] text-center">
-            See what our trusted users Say
+            {t('testimonials.title')}
           </h2>
         </div>
 
