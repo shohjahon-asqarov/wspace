@@ -27,10 +27,10 @@ const Footer = () => {
 
   return (
     <footer className="color pt-[140px] pb-8">
-      <div className="container  px-4">
-        <div className=' lg:mx-auto max-w-[595px] pb-[140px] flex flex-col items-center'>
+      <div className="container">
+        <div className='lg:mx-auto lg:max-w-[595px] pb-[140px] flex flex-col items-center'>
           <h2 className="font-bold lg:text-center text-left text-white text-[36px] leading-[56px] md:text-[54px] md:leading-[100%] lg:text-[64px] lg:leading-[100%] tracking-[-0.02em]">Try Whitepace today</h2>
-          <p className='defoult_p lg:text-center text-left text-white mt-6 mb-10 '>
+          <p className='defoult_p text-center text-white mt-6 mb-10 '>
             Get started for free.
             Add your whole team as your needs grow.
           </p>

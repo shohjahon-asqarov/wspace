@@ -5,7 +5,7 @@ import ArrowIcon from '../../../public/icons/Icon.svg'
 const DataSecurity = () => {
   return (
     <section className="lg:py-[140px] md:py-[100px] py-20">
-      <div className="container grid lg:grid-cols-2 lg:gap-0 gap-9 lg:text-left items-center">
+      <div className="container grid lg:grid-cols-2 lg:gap-0 gap-8 lg:text-left items-center">
         <div className="text-center lg:text-left order-2 lg:order-1">
           <h2 className="font-bold text-4xl md:text-[54px] lg:text-[64px]">
             100% your data
