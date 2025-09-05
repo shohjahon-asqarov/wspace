@@ -28,7 +28,7 @@ export const formatCurrency = (amount: number, currency: string = 'USD'): string
  * @param delay - Delay in milliseconds
  * @returns Debounced function
  */
-export const debounce = <T extends (...args: any[]) => any>(
+export const debounce = <T extends (...args: unknown[]) => unknown>(
   func: T,
   delay: number
 ): ((...args: Parameters<T>) => void) => {
@@ -46,7 +46,7 @@ export const debounce = <T extends (...args: any[]) => any>(
  * @param limit - Time limit in milliseconds
  * @returns Throttled function
  */
-export const throttle = <T extends (...args: any[]) => any>(
+export const throttle = <T extends (...args: unknown[]) => unknown>(
   func: T,
   limit: number
 ): ((...args: Parameters<T>) => void) => {
@@ -75,7 +75,7 @@ export const generateId = (prefix: string = 'id'): string => {
  * @param value - Value to check
  * @returns True if value is empty
  */
-export const isEmpty = (value: any): boolean => {
+export const isEmpty = (value: unknown): boolean => {
   if (value == null) return true;
   if (typeof value === 'string') return value.trim().length === 0;
   if (Array.isArray(value)) return value.length === 0;
@@ -90,15 +90,15 @@ export const isEmpty = (value: any): boolean => {
  * @param defaultValue - Default value if property doesn't exist
  * @returns Property value or default value
  */
-export const get = (obj: any, path: string, defaultValue?: any): any => {
+export const get = (obj: Record<string, unknown>, path: string, defaultValue?: unknown): unknown => {
   const keys = path.split('.');
-  let result = obj;
+  let result: unknown = obj;
   
   for (const key of keys) {
-    if (result == null || typeof result !== 'object') {
+    if (result == null || typeof result !== 'object' || Array.isArray(result)) {
       return defaultValue;
     }
-    result = result[key];
+    result = (result as Record<string, unknown>)[key];
   }
   
   return result !== undefined ? result : defaultValue;

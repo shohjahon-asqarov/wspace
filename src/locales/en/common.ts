@@ -1,4 +1,4 @@
-export default {
+const common = {
   "navbar": {
     "products": "Products",
     "solution": "Solution",
@@ -103,4 +103,6 @@ export default {
     "contactUs": "Contact Us",
     "readMore": "Read More"
   }
-}
+};
+
+export default common;

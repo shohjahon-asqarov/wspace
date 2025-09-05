@@ -1,7 +1,5 @@
-import Image from "next/image"
 import { useTranslation } from 'react-i18next'
 import WorkTogether from "./WorkTogether"
-import ProjectImg from '../../../public/img/project.img.jpg'
 import ArrovRight from "../ui/ArrovRight"
 
 const ProjectManagement = () => {

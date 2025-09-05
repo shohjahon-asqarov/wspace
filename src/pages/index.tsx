@@ -1,6 +1,4 @@
 import React from 'react';
-import Section from '@/components/ui/Section';
-import Container from '@/components/ui/Container';
 import AnyWhere from "@/components/sections/AnyWhere";
 import AppItegration from "@/components/sections/AppItegration";
 import Customization from "@/components/sections/Customization";

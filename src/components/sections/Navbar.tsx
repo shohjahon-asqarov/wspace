@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { useMenu } from '@/hooks/useMenu';
 import { useNavigation } from '@/hooks/useNavigation';
 import Button from '@/components/ui/Button';
-import Container from '@/components/ui/Container';
 import { Z_INDEX } from '@/constants';
 import Logo from '../../../public/icons/logo.svg';
 import ArrovRight from '../ui/ArrovRight';

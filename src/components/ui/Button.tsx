@@ -1,6 +1,5 @@
 import React from 'react';
 import { ButtonVariant, ButtonSize, BaseComponentProps } from '@/types';
-import { BUTTON_STYLES, THEME } from '@/constants';
 
 interface ButtonProps extends BaseComponentProps {
   variant?: ButtonVariant;
